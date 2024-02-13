@@ -77,8 +77,7 @@ void Queue::Input() {
 }
 
 void Queue::Output() {
-    Node *p = Pop();
-    DataNode *o1 = new DataNode;
+    Node *p = Pop();   
     if (p == nullptr)
         std::cout << "empty\n";
     else

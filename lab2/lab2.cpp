@@ -10,7 +10,7 @@ int main()
     std::cout <<  queue.IsEmpty() << " empty?\n"; 
     std::cout << queue.empty() << " empty?\n\n";
 
-    Node p;
+    DataNode<int> p;
     p.data = 3;
     queue.Push(p);
 
