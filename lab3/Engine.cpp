@@ -16,12 +16,15 @@ Engine::Engine() {
 	name = "none";
 }
 
-Engine::Engine(std::string name) {
-	++count;
+Engine::Engine(std::string name) {	
 	if (name.find("\n") != std::string::npos || name.empty()) {
 		throw (name);
 	}
-	this->name = name;
+	else {
+		this->name = name;
+	}
+	Engine();
+	
 }
 
 Engine::~Engine() {	

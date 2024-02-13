@@ -37,7 +37,7 @@ int main()
         std::cout << engine4->Show() << std::endl;
         std::cout << engine4->GetCount() << std::endl;
     }
-    catch (std::string arg) {
+    catch (std::string arg) {        
         std::cout << "error name: " << arg << std::endl;
     }
     // lab4

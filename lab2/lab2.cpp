@@ -14,6 +14,7 @@ int main()
     p.data = 3;
     queue.Push(p);
 
+    
     //проверка на пустоту после добавления
     std::cout << queue.empty() << " empty?\n";
     std::cout << p.data << " p\n\n";

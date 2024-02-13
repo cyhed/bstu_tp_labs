@@ -1,9 +1,10 @@
 #pragma once
 #include "Node.h"
 
+
 class Queue{    
      
-    Node* start = nullptr, * end = nullptr;
+    Node *start = nullptr, *end = nullptr;
 
 public:   
     Queue();
@@ -12,7 +13,7 @@ public:
 
 
     void Push(Node p);
-    Node* Pop();
+    Node * Pop();
 
     bool empty() {
         return IsEmpty();}
