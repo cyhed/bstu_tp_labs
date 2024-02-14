@@ -10,10 +10,7 @@ public:
 public:
     std::string data;
     Node();
-    Node(const Node& p)
-    {
-        data = p.data;        
-    }
+    virtual Node(const Node& p);
 };
 template<class Type>
 class DataNode :

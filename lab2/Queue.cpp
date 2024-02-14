@@ -142,7 +142,7 @@ int Queue::Count() {
     return count;
 }
 
-Node Queue::At(int number){
+Node* Queue::At(int number){
     int count = this->Count();
     if (number > count)
         number = count;
@@ -153,8 +153,8 @@ Node Queue::At(int number){
         p = p->prev;
     }
     std::cout << p->data << " data in" << std::endl;
-    Node node{ p };
-    std::cout << node.data << " At" << std::endl;
+    Node *node = new Node(*p) ;
+    std::cout << node->data << " At" << std::endl;
     return node;
 }
 
