@@ -9,7 +9,11 @@ public:
 
 public:
     std::string data;
-
+    Node();
+    Node(const Node& p)
+    {
+        data = p.data;        
+    }
 };
 template<class Type>
 class DataNode :
