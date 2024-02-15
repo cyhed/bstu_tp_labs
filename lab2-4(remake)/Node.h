@@ -1,56 +1,35 @@
 #pragma once
 #include <string>
 #include <exception>
-struct  Node{
+#include <iostream>
+class  Node{
 public:
-	Node* next = nullptr, * prev = nullptr;
-
-	virtual ~Node();
+	Node* next = nullptr, * prev = nullptr;	
 
 	virtual  Node& Clone() = 0;
-	virtual std::string to_string() ;
+	
 };
 
 template<typename Type>
-struct DataNode :
+class DataNode :
 	public Node {
 public:
-	Type *data;
+	Type data;
+	DataNode();
+	DataNode(Type data);
+	DataNode(const DataNode&); // конструктор копирования
+	~DataNode();
 
-	DataNode() {};
-	DataNode(const Type &data) {
-		try {
-			this->data = data.Clone;			
-		}
-		catch (std::exception e) {}
-		try {
-			this->data = new Type(data);
-		}
-		catch (std::exception e) {}
-		try {
-			
-			data = new Type();
-			*(this->data)= *(data);
-		}
-		catch (std::exception e) {}
-	};
-
-	~DataNode()
-	{
-		delete data;
+	DataNode& Clone() override {
+		DataNode* newNode = nullptr;
+		newNode =new DataNode<Type>(*this);
+		return *newNode;		
 	}
 
 
-	Node& Clone() {
-		Node* newNode = new DataNode<Type>(this->data);
-		return newNode;		
-	}
-
-
-	std::string to_string() {
-		
+	/*std::string to_string() {
 		std::string res = "";
-		try {
+		/*try {
 			res = data.toString();
 			return res;
 		}
@@ -70,11 +49,21 @@ public:
 			return res;
 		}
 		catch (std::exception e) {}
-		return res;
-		
-	}
-	
-
+		res = std::to_string(data);
+		return res;		
+	}*/
 
 	
 };
+
+template <typename T>
+DataNode<T>::DataNode(T data) :data{ data } {};
+
+template <typename T>
+DataNode<T>::DataNode(const DataNode& node) : data{ node.data } { };
+
+template <typename T>
+DataNode<T>::~DataNode() { };
+
+
+

@@ -29,10 +29,10 @@ public:
     
     void operator + (Node &p);
     Node* operator - ();
-    Queue& operator = (const Queue& p);
+   Queue& operator = ( Queue& p);
     
 
-    std::string to_string();
+    
     
 };
 

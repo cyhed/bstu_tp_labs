@@ -24,7 +24,7 @@ void Queue::Delete() {
 };
 
 Queue::~Queue() {
-    this->Delete();
+    this->Delete();    
 };
 
 
@@ -68,8 +68,41 @@ Node* Queue::Pop() {
 }
 
 
-//Node& At(int number);
-    // Queue& Clone();
+Node& Queue::At(int number) {
+
+    int count = this->Count();
+    if (number > count)
+        //можно генерировать исключение выход за размер
+        number = count;
+
+    Node* p = start;
+    if (p != nullptr) {
+        for (int i = 0; i < number; i++) {
+            if (p->prev != nullptr)
+                p = p->prev;
+            else
+                break;
+        }
+        return p->Clone();
+    }
+    else {
+        return *p;
+        //также можно генерировать исключение выход за размер
+    }
+        
+    
+}
+   
+Queue& Queue::Clone() {
+    Queue* queue = new Queue();
+    int count = 0;
+    int pCount = this->Count();
+
+    while (count < pCount) {        
+        queue->Push(this->At(count++));
+    }
+    return *queue;
+}
 
 bool Queue::IsEmpty() {
     return start == nullptr && end == nullptr;
@@ -96,15 +129,15 @@ Node* Queue::operator - () {
     return Pop();
 }
 
+Queue& Queue::operator = (Queue& other) {
+    this->Clear();  
+    
+    int count = 0;
+    int pCount = other.Count();
+    
+    while (count < pCount) {          
+        this->Push(other.At(count++));
+    }    
+    return *this;
+}
 
-
-std::string  Queue::to_string() {
-    std::string strQueue = "";
-    Node* p = start;
-    while (p != nullptr)
-    {
-        strQueue += p->to_string();
-        p = p->prev;
-    }
-    return strQueue;
-};
