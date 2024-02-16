@@ -129,14 +129,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CastQueueTester.cpp" />
+    <ClCompile Include="CastNodeTester.cpp" />
     <ClCompile Include="lab2-4(remake).cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="QueueTester.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CastQueueTester.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="QueueTester.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,7 +21,10 @@
     <ClCompile Include="Queue.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CastQueueTester.cpp">
+    <ClCompile Include="CastNodeTester.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueTester.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,6 +36,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="CastQueueTester.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueTester.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

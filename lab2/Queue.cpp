@@ -146,6 +146,7 @@ Node* Queue::At(int number){
     int count = this->Count();
     if (number > count)
         number = count;
+
     Node* p = start;
     if (p!= nullptr)        
     for (int i = 0; i < number ; i++) {
