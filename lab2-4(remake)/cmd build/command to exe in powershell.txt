@@ -1,0 +1,7 @@
+запускать компилятор можно только через терминал среды разработки
+иначе надо скачать компилятор как отдельный пакет
+
+Developer PowerShell for VS 2022 
+cl /EHsc /std:c++20 /W4 ".\lab2-4(remake).cpp" ".\Queue.cpp" ".\Node.cpp"  /link /out:"program.exe"
+
+
