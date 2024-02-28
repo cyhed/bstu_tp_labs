@@ -5,5 +5,8 @@ class TurbojetEngine :
 {
 public:
     TurbojetEngine(std::string name) : InternalCombustionEngine(name) {};
+    std::string Show()   {
+        return this->name + " TurbojetEngine";
+    }
 };
 

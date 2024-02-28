@@ -5,5 +5,8 @@ class InternalCombustionEngine :
 {
 public:
 	InternalCombustionEngine(std::string name) : Engine(name) {};
+	std::string Show()   {
+		return this->name + " InternalCombustionEngine";
+	}
 };
 

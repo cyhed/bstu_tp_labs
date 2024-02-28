@@ -5,6 +5,8 @@ class DieselEngine :
 {
 public:
 	DieselEngine(std::string name) : InternalCombustionEngine(name) {};
-
+	std::string Show()   {
+		return this->name + " DieselEngine";
+	}
 };
 

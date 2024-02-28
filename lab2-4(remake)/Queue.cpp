@@ -94,10 +94,10 @@ Node& Queue::At(int number) {
 }
    
 Queue& Queue::Clone() {
-    Queue* queue = new Queue();
-    int count = 0;
+    Queue* queue = new Queue();    
     int pCount = this->Count();
 
+    int count = 0;
     while (count < pCount) {        
         queue->Push(this->At(count++));
     }

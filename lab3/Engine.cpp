@@ -4,7 +4,7 @@
 int Engine::count = 0;
 
 std::string Engine::Show() {
-	return this->name;
+	return  this->name + " Engine";
 }
 
 int Engine::GetCount() {
@@ -12,19 +12,26 @@ int Engine::GetCount() {
 }
 
 Engine::Engine() {	
-	++count;
+	this->count++;	
 	name = "none";
 }
 
 Engine::Engine(std::string name) {	
-	if (name.find("\n") != std::string::npos || name.empty()) {
-		throw (name);
+	
+	if (name.find("\n") != std::string::npos || name.empty() || (name.find(" ") != std::string::npos ) ) {
+		throw std::invalid_argument(name);
+	}
+	else if(name.length() >= 10) {
+		throw std::length_error("max size = 10");
+	}
+	else if (name.find("#") != std::string::npos || 
+		name.find("@") != std::string::npos) {
+		throw std::string("spec symbols");
 	}
 	else {
 		this->name = name;
-	}
-	Engine();
-	
+	}		
+	this->count++;
 }
 
 Engine::~Engine() {	

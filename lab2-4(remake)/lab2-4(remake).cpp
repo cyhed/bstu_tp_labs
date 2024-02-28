@@ -79,10 +79,10 @@ int main()
 
 void Input(Queue *queue) {
     std::cout << "input data\n";
-    std::string data;
+    double data = 0;
     std::cin >> data;
 
-    DataNode<std::string>* dNode = new DataNode<std::string>(data);
+    DataNode<double>* dNode = new DataNode<double>(data);
     queue->Push(*dNode);  
     
    
@@ -94,7 +94,7 @@ void Output(Queue* queue) {
     int pCount = queue->Count();
     std::cout << "{";
     while (count < pCount) {
-        std::string data = dynamic_cast<DataNode<std::string>*> (&queue->At(count++))->data;
+        double data = dynamic_cast<DataNode<double>*> (&queue->At(count++))->data;
         std::cout << data << " , " ;        
     }
     std::cout <<  "}\n";
