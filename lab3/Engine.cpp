@@ -19,18 +19,23 @@ Engine::Engine() {
 Engine::Engine(std::string name) {	
 	
 	if (name.find("\n") != std::string::npos || name.empty() || (name.find(" ") != std::string::npos ) ) {
-		throw std::invalid_argument(name);
+		throw std::invalid_argument("invalid name");
 	}
 	else if(name.length() >= 10) {
 		throw std::length_error("max size = 10");
 	}
 	else if (name.find("#") != std::string::npos || 
-		name.find("@") != std::string::npos) {
+		name.find("@") != std::string::npos || 
+		name.find("%") != std::string::npos || 
+		name.find("!") != std::string::npos || 
+		name.find("$") != std::string::npos || 
+		name.find("&") != std::string::npos ||
+		name.find("^") != std::string::npos || 
+		name.find("?") != std::string::npos ){
 		throw std::string("spec symbols");
 	}
-	else {
-		this->name = name;
-	}		
+	
+	this->name = name;			
 	this->count++;
 }
 

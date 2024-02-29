@@ -61,7 +61,10 @@ int main()
     while (true) {
         std::cout << "input name\n";
         std::string name;
-        std::cin >> name;
+        // std::cin >> name;
+      
+        //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::getline(std::cin, name);
         try {
              new Engine(name);
         }
