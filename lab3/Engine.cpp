@@ -45,7 +45,7 @@ Engine::Engine(std::string name) {
 		name.find("9") != std::string::npos ||
 		name.find("0") != std::string::npos){ }
 	else
-		throw 10;
+		throw NameContainsNotNumber("contains not number ");
 	
 	this->name = name;			
 	this->count++;
