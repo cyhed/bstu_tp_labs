@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Engine.h"
+#include "NameContainsNumber.h"
 class Engine
 {
 private:

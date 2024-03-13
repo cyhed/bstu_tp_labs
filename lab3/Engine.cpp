@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include "NameContainsNumber.h"
 
 
 int Engine::count = 0;
@@ -33,7 +34,18 @@ Engine::Engine(std::string name) {
 		name.find("^") != std::string::npos || 
 		name.find("?") != std::string::npos ){
 		throw std::string("spec symbols");
-	}
+	}else if (name.find("1") != std::string::npos ||
+		name.find("2") != std::string::npos ||
+		name.find("3") != std::string::npos ||
+		name.find("4") != std::string::npos ||
+		name.find("5") != std::string::npos ||
+		name.find("6") != std::string::npos ||
+		name.find("7") != std::string::npos ||
+		name.find("8") != std::string::npos ||
+		name.find("9") != std::string::npos ||
+		name.find("0") != std::string::npos){ }
+	else
+		throw 10;
 	
 	this->name = name;			
 	this->count++;

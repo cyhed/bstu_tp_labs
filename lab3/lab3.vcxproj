@@ -132,12 +132,14 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="InternalCombustionEngine.cpp" />
     <ClCompile Include="lab3-4.cpp" />
+    <ClCompile Include="NameContainsNumber.cpp" />
     <ClCompile Include="TurbojetEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DieselEngine.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="InternalCombustionEngine.h" />
+    <ClInclude Include="NameContainsNumber.h" />
     <ClInclude Include="TurbojetEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

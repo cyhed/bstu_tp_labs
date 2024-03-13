@@ -61,10 +61,15 @@ int main()
     while (true) {
         std::cout << "input name\n";
         std::string name;
+        //Updated upstream
         // std::cin >> name;
       
         //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, name);
+
+        //std::cin >> name;
+        //std::cin.getline(std::cin, name, ';');
+        //Stashed changes
         try {
              new Engine(name);
         }
@@ -75,6 +80,9 @@ int main()
             std::cout << "error : " << arg.what() << std::endl;
         }
         catch (std::invalid_argument arg) {
+            std::cout << "error : " << arg.what() << std::endl;
+        }
+        catch (NameContainsNotNumber arg) {
             std::cout << "error : " << arg.what() << std::endl;
         }
         catch (...) {
